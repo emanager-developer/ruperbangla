@@ -1,0 +1,8 @@
+.counter_wrap {
+  @apply py-5 sm:py-10;
+  background-image: linear-gradient(0deg, #607389b5, #ffffffd1),
+    url(/images/project1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}

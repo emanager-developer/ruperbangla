@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0e4677;
+  --secondary: #ff0000;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui;
+}
+
+h2 {
+  font-family: "Halant", serif;
+}
+
+.container {
+  max-width: 95% !important;
+  margin: auto;
+}
+
+@media only screen and (min-width: 1250px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
+
+.primary_btn {
+  color: #333;
+  background: #dddddde7;
+  padding: 8px 20px;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  font-size: 15px;
+  display: block;
+  width: fit-content;
+}
+
+.primary_btn:hover {
+  color: #fff;
+  background: none;
+}
+
+.admin_btn {
+  @apply rounded border bg-primary px-4 py-2 text-white;
+}
+
+.primary_btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--primary);
+  z-index: -1;
+  transition: 0.8s;
+}
+
+.primary_btn::before {
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+
+.primary_btn:hover::before {
+  height: 180%;
+}
+
+.primary_outline_btn {
+  color: var(--primary);
+  background: none;
+  padding: 8px 20px;
+  transition: 0.6s;
+
+  border-radius: 20px;
+  font-size: 14px;
+  border: 1px solid var(--primary);
+
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.primary_outline_btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--primary);
+  z-index: -1;
+  transition: 0.8s;
+}
+
+.primary_outline_btn:hover:after {
+  width: 100%;
+}
+.primary_outline_btn:hover {
+  color: #fff;
+}
+
+/* ---------------------------form------------------------- */
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px;
+  outline: none;
+  font-size: 14px;
+  margin-top: 3px;
+  color: #555;
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+form {
+  font-size: 15px;
+}
+
+select {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  font-size: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+}
+
+table thead th {
+  background: #dddddd5c;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #404145e6;
+  text-transform: uppercase;
+  text-align: start;
+  white-space: nowrap;
+}
+
+table tbody td {
+  padding: 10px;
+  text-align: start;
+  border-bottom: 1px solid #dddddd94;
+}
+
+.jodit-workplace {
+  height: 300px !important;
+}
+
+.jodit-status-bar {
+  display: none !important;
+}
+
+/* ---------------------------swiper button------------------------- */
