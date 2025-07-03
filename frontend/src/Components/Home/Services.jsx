@@ -19,8 +19,8 @@ export default function Services() {
               service?.description.replace(/<[^>]+>/g, "");
 
             return (
-              <Link
-                to={`/service/${service?._id}`}
+              <div
+                // to={`/service/${service?._id}`}
                 key={i}
                 className="rounded-xl bg-white text-center p-6 shadow hover:shadow-md transition duration-300 border border-transparent hover:border-primary"
                 data-aos="zoom-in"
@@ -41,7 +41,7 @@ export default function Services() {
                     ? description.slice(0, 100) + "..."
                     : description}
                 </p>
-              </Link>
+              </div>
             );
           })}
         </div>
