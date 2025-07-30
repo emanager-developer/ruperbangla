@@ -1,0 +1,1 @@
+import{a9 as i,aa as u,j as e,ab as c,f as m}from"./index-BSZQSoAt.js";function l({children:n}){var o;const{loggedUser:t}=i(r=>r.user),s=u(),a=localStorage.getItem("gloria_jwt");return!a&&((o=t==null?void 0:t.data)==null?void 0:o.role)!=="admin"?e.jsx(c,{to:"/admin/login",state:{from:s},replace:!0}):t!=null&&t.success&&a?n:e.jsx(m,{})}export{l as default};
