@@ -11,7 +11,7 @@ export default function AboutProfileBtn() {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <button className="primary_btn">Download Gloria Homes Profile</button>
+      <button className="primary_btn">Download Ruper Bangla Profile</button>
     </Link>
   );
 }
