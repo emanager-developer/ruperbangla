@@ -7,9 +7,14 @@ export default function Gallery() {
   const { data } = useGetGalleryQuery();
   const gallery = data?.data;
 
+  if (gallery?.length === 0) return;
+
   return (
     <section className="bg-slate-100 py-14">
       <div className="container">
+        <h2 className="mb-10 text-center text-4xl font-semibold text-neutral">
+          Photo Gallery
+        </h2>
         <PhotoProvider>
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}

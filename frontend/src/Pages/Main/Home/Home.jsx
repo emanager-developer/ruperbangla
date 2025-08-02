@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Counter from "../../../Components/Home/Counter";
 import Services from "../../../Components/Home/Services";
 import ContactUs from "../../../Components/Home/ContactUs";
+import VideoGallery from "../../../Components/Home/VideoGallery";
 
 export default function Home() {
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Home() {
       <Gallery />
       <Features />
       <Counter />
+      <VideoGallery />
       <ContactUs />
     </>
   );

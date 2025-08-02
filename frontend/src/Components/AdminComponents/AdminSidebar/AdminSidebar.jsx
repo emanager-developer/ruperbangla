@@ -12,7 +12,7 @@ import { MdDesignServices } from "react-icons/md";
 import { FcAbout } from "react-icons/fc";
 import { ImSortNumbericDesc } from "react-icons/im";
 import { RiAdminFill, RiBarChartHorizontalFill } from "react-icons/ri";
-import { FaChartLine } from "react-icons/fa";
+import { FaChartLine, FaPhotoVideo } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { CiMail } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
@@ -50,10 +50,6 @@ const adminSidebarItems = [
         title: "Services",
         path: "/admin/service/all",
       },
-      {
-        title: "Gallery",
-        path: "/admin/service/gallery/all",
-      },
     ],
   },
 
@@ -63,16 +59,24 @@ const adminSidebarItems = [
     path: "/admin/highlightProject",
   },
 
-    {
+  {
     icon: <ImSortNumbericDesc />,
     title: "Counter",
     path: "/admin/counter",
   },
-
   {
-    icon: <RiAdminFill />,
-    title: "Administrator",
-    path: "/admin/administrator/all",
+    icon: <FaPhotoVideo />,
+    title: "Gallery",
+    subMenu: [
+      {
+        title: "Photo Gallery",
+        path: "/admin/gallery/photo/all",
+      },
+      {
+        title: "Video Gallery",
+        path: "/admin/gallery/video/all",
+      },
+    ],
   },
   {
     icon: <MdFeaturedPlayList />,
@@ -155,13 +159,13 @@ const adminSidebarItems = [
         title: "Banner",
         path: "/admin/front-end/banner/all",
       },
-      {
-        title: "Gallery",
-        path: "/admin/front-end/gallery",
-      },
     ],
   },
-
+  {
+    icon: <RiAdminFill />,
+    title: "Administrator",
+    path: "/admin/administrator/all",
+  },
   {
     icon: <IoMdSettings />,
     title: "General Setting",

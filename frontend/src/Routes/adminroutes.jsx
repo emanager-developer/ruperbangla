@@ -12,6 +12,9 @@ import EditMoreAbout from "../Pages/Admin/MoreAbout/EditMoreAbout";
 import AllBanner from "../Pages/Admin/FrontEndSetting/Banner/AllBanner";
 import AddBanner from "../Pages/Admin/FrontEndSetting/Banner/AddBanner";
 import EditBanner from "../Pages/Admin/FrontEndSetting/Banner/EditBanner";
+import EditVideoGallery from "../Pages/Admin/Gallery/VideoGallery/EditVideoGallery";
+import AddVideoGallery from "../Pages/Admin/Gallery/VideoGallery/AddVideoGallery";
+import AllVideoGallery from "../Pages/Admin/Gallery/VideoGallery/AllVideoGallery";
 
 // Lazy loading the components
 const About = lazy(() => import("../Pages/Admin/AboutUs/AboutUs"));
@@ -181,14 +184,31 @@ export const adminRoutes = {
       path: "front-end/logo",
       element: <Logo />,
     },
+
+    // photo gallery
     {
-      path: "front-end/gallery",
+      path: "gallery/photo/all",
       element: <Gallery />,
     },
     {
-      path: "front-end/gallery/add",
+      path: "gallery/photo/add",
       element: <AddGallery />,
     },
+
+    // video gallery
+    {
+      path: "gallery/video/all",
+      element: <AllVideoGallery />,
+    },
+    {
+      path: "gallery/video/add",
+      element: <AddVideoGallery />,
+    },
+    {
+      path: "gallery/video/edit/:id",
+      element: <EditVideoGallery />,
+    },
+
     {
       path: "general-setting/business-info",
       element: <BusinessInfo />,

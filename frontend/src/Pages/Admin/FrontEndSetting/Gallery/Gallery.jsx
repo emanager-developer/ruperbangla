@@ -1,9 +1,11 @@
 import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
-
-import { useDeleteGalleryByIdMutation, useGetGalleryQuery } from "../../../../Redux/gallery/galleryApi";
+import {
+  useDeleteGalleryByIdMutation,
+  useGetGalleryQuery,
+} from "../../../../Redux/gallery/galleryApi";
 import Spinner from "../../../../Components/Spinner/Spinner";
+import toast from "react-hot-toast";
 
 export default function Gallery() {
   const { data, isLoading, isError, isSuccess } = useGetGalleryQuery();
@@ -16,18 +18,11 @@ export default function Gallery() {
       try {
         const res = await deleteGallery(id).unwrap();
         if (res?.success) {
-          Swal.fire({
-            title: "",
-            text: "Gallery Deleted Successfully",
-            icon: "success",
-          });
+          toast.success("Gallery deleted successfully");
         }
       } catch (error) {
-        Swal.fire({
-          title: "",
-          text: "Something went wrong",
-          icon: "error",
-        });
+        toast.error("Something went wrong");
+        console.error(error);
       }
     }
   };
@@ -37,7 +32,7 @@ export default function Gallery() {
 
   if (isError) {
     content = (
-      <p className="text-red-500 mt-5">Something went wrong to get data!</p>
+      <p className="mt-5 text-red-500">Something went wrong to get data!</p>
     );
   }
 
@@ -53,11 +48,11 @@ export default function Gallery() {
                   gallery?.image
                 }`}
                 alt={gallery?.image}
-                className="w-14 h-8 rounded"
+                className="h-8 w-14 rounded"
               />
             </td>
             <td>
-              <div className="flex gap-3 items-center">
+              <div className="flex items-center gap-3">
                 <button onClick={() => handleDelete(gallery?._id)}>
                   <AiOutlineDelete className="text-lg hover:text-red-500" />
                 </button>
@@ -71,19 +66,16 @@ export default function Gallery() {
 
   return (
     <section>
-      <div className="p-4 border-b bg-base-100 rounded">
-        <div className="flex justify-between items-center">
+      <div className="rounded border-b bg-base-100 p-4">
+        <div className="flex items-center justify-between">
           <h1 className="font-medium text-neutral">Gallery</h1>
-          <Link
-            to="/admin/front-end/gallery/add"
-            className="admin_btn text-sm"
-          >
+          <Link to="/admin/front-end/gallery/add" className="admin_btn text-sm">
             Add Gallery
           </Link>
         </div>
       </div>
 
-      <div className="relative overflow-x-auto mt-2">
+      <div className="relative mt-2 overflow-x-auto">
         <table>
           <thead>
             <tr>

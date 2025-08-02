@@ -6,13 +6,10 @@ export default function MultiSocial({ counts, setCounts }) {
   };
 
   const handleInputChange = (index, event) => {
-    const values = [...counts];
-    if (event.target.name === "title") {
-      values[index].title = event.target.value;
-    } else {
-      values[index].number = event.target.value;
-    }
-    setCounts(values);
+    const { name, value } = event.target;
+    setCounts((prev) =>
+      prev.map((item, i) => (i === index ? { ...item, [name]: value } : item)),
+    );
   };
 
   const handleRemoveFields = (index) => {
