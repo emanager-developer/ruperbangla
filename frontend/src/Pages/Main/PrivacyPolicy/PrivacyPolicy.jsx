@@ -6,7 +6,7 @@ import Spinner from "../../../Components/Spinner/Spinner";
 export default function PrivacyPolicy() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Privacy Policy - GHL";
+    document.title = "Privacy Policy - Ruper Bangla";
   }, []);
 
   const { data, isLoading } = useGetPrivacyQuery();

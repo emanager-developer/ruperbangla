@@ -11,7 +11,7 @@ export default function ProjectDetails() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = project?.title || "Project Details - GHL";
+    document.title = project?.title || "Project Details - Ruper Bangla";
   }, [project]);
 
   if (error) {

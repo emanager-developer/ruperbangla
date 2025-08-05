@@ -6,7 +6,9 @@ export default function MainLayout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="min-h-[50vh]">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );

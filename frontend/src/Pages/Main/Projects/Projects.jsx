@@ -1,11 +1,7 @@
 import { useEffect } from "react";
-import { FaBath, FaBed, FaMapMarkerAlt } from "react-icons/fa";
-import { MdSpaceDashboard } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import { useGetProjectsQuery } from "../../../Redux/projects/projectsApi";
 import parse from "html-react-parser";
-import Spinner from "../../../Components/Spinner/Spinner";
-import AboutProfileBtn from "../../../Components/AboutProfileBtn/AboutProfileBtn";
 
 const truncateDescription = (description, maxLength = 100) => {
   const stripHtmlTags = (html) => {
@@ -26,7 +22,7 @@ const truncateDescription = (description, maxLength = 100) => {
 export default function Projects() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Projects - GHL";
+    document.title = "Projects - Ruper Bangla";
   }, []);
 
   const { type } = useParams();
@@ -66,10 +62,6 @@ export default function Projects() {
               </div>
             </Link>
           ))}
-        </div>
-
-        <div className="mt-10 flex items-center justify-center">
-          <AboutProfileBtn />
         </div>
       </div>
     </section>

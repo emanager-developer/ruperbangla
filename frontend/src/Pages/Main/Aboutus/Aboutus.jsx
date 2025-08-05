@@ -9,7 +9,7 @@ import MoreAbout from "../../../Components/MoreAbout/MoreAbout";
 export default function Aboutus() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "About Us - GHL";
+    document.title = "About Us - Ruper Bangla";
   }, []);
 
   const { data } = useGetDirectorQuery();

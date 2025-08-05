@@ -24,6 +24,8 @@ export default function ContactUs() {
   const [twitterLink, setTwitterLink] = useState("");
   const [linkedinLink, setLinkedinLink] = useState("");
   const [youtubeLink, setYoutubeLink] = useState("");
+  const [mapUrl, setMapUrl] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     if (contactUs) {
@@ -36,6 +38,8 @@ export default function ContactUs() {
       setTwitterLink(contactUs.twitterLink || "");
       setLinkedinLink(contactUs.linkedinLink || "");
       setYoutubeLink(contactUs.youtubeLink || "");
+      setMapUrl(contactUs.mapUrl || "");
+      setDescription(contactUs.description || "");
     }
   }, [contactUs]);
 
@@ -52,6 +56,8 @@ export default function ContactUs() {
       twitterLink,
       linkedinLink,
       youtubeLink,
+      mapUrl,
+      description,
     };
 
     try {
@@ -86,6 +92,16 @@ export default function ContactUs() {
 
       <form className="p-4" onSubmit={handleAddUpdate}>
         <div className="grid items-start gap-4 text-neutral-content sm:grid-cols-2 md:grid-cols-3">
+          <div className="sm:col-span-3">
+            <p className="mb-1">Description</p>
+            <input
+              type="text"
+              name="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            />
+          </div>
           <div>
             <p className="mb-1">Email</p>
             <input
@@ -117,7 +133,7 @@ export default function ContactUs() {
             />
           </div>
 
-          <div>
+          <div className="sm:col-span-2">
             <p className="mb-1">Address</p>
             <textarea
               name="address"
@@ -136,6 +152,16 @@ export default function ContactUs() {
               onChange={(e) => setWpLink(e.target.value)}
               required
             />
+          </div>
+
+          <div className="sm:col-span-3">
+            <p className="mb-1">Map Embed</p>
+            <textarea
+              name="mapUrl"
+              value={mapUrl}
+              onChange={(e) => setMapUrl(e.target.value)}
+              required
+            ></textarea>
           </div>
 
           <div>
